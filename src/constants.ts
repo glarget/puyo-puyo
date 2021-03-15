@@ -1,9 +1,12 @@
-// eslint-disable-next-line import/prefer-default-export
-export const PUYO_COLORS = {
-  1: 'red',
-  2: 'blue',
-  3: 'yellow',
-  4: 'white',
+interface PuyoProps {
+  [key: number]: string;
+}
+
+export const PUYO_COLORS: PuyoProps = {
+  1: '#8AD64A', // Conifer
+  2: '#43B1D6', // Shakespeare
+  3: '#Eb4b32', // Cinnabar
+  4: '#F5DD45', // Starship
 };
 
 export const FALL_PIECE = 'FALL_PIECE';
@@ -70,6 +73,8 @@ export const INITIAL_STATE = {
   score: 0,
   combo: 1,
   gameOver: false,
-  startTimer: new Date().getTime() + 300000,
-  timer: 300000,
+  startTimer: new Date().getTime() + 240000,
+  timer: 240000,
 };
+
+export const GAME_SPEED_TIMER = 60;

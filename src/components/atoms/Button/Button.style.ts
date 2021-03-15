@@ -27,6 +27,7 @@ type ButtonProps = LayoutProps &
   TypographyProps & {
     variant: string | undefined;
   };
+
 // eslint-disable-next-line import/prefer-default-export
 export const ButtonWrapper = styled.button<ButtonProps>`
   border-radius: ${({ variant }) => (variant === 'round' ? '50px' : '6px')};

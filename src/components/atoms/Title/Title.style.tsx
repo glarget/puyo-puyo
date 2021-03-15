@@ -28,6 +28,6 @@ type TitleProps = ColorProps &
 
 // eslint-disable-next-line import/prefer-default-export
 export const TitleWrapper = styled.h1<TitleProps>`
-  font-family: 'MontSerrat';
+  font-family: 'Days One';
   ${compose(border, color, flexbox, fontSize, layout, position, space, typography)};
 `;

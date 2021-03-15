@@ -3,6 +3,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
 import type { ReactElement } from 'react';
 
+import Div from '../../components/atoms/Div';
 import Header from '../../views/Header';
 import Footer from '../../views/Footer';
 import theme from '../../theme';
@@ -10,44 +11,42 @@ import theme from '../../theme';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   @font-face {
-     /* Montserrat Regular */
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Montserrat'), 
-    url(/fonts/montserrat-regular.woff2) format('woff2'),
-    url(/fonts/montserrat-regular.woff) format('woff')
-  }
-  /* Montserrat SemiBold */
-  @font-face {
-      font-family: 'MontserratSemiBold';
-      font-weight: 700;
+  font-family: 'Days One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/days-one-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/days-one-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/days-one-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/days-one-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/days-one-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/days-one-v10-latin-regular.svg#DaysOne') format('svg'); /* Legacy iOS */
+}
 
-      src: local('MontserratSemiBold'),
-        url(/fonts/montserrat-semibold.woff2) format('woff2'),
-        url(/fonts/montserrat-semibold.woff}) format('woff');
-    }
   body {
-    font-family: 'Montserrat';
+    background: linear-gradient(to right, rgb(86, 180, 211), rgb(52, 143, 80));
+    font-family: 'Days One';
     font-size: 16px;
     line-height: 1.4;
   }
 `;
 
-type Props = {
+interface Props {
   children: ReactElement;
-};
+}
 
+/**
+ * returns the main skeleton of the Puyo game.
+ * It contains a header, a footer and a React Portal
+ */
 export default function MainLayout({ children }: Props): ReactElement {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Header />
-        {children}
-        <Footer />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header />
+      {children}
+      <Footer />
+      <Div id="portal-modal" />
+    </ThemeProvider>
   );
 }

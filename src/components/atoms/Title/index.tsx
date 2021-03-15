@@ -2,6 +2,7 @@ import React, { ElementType } from 'react';
 import type { ReactNode, ReactElement } from 'react';
 import type {
   ColorProps,
+  FlexboxProps,
   FontFamilyProps,
   FontSizeProps,
   LayoutProps,
@@ -12,6 +13,7 @@ import type {
 import { TitleWrapper } from './Title.style';
 
 type Props = ColorProps &
+  FlexboxProps &
   LayoutProps &
   SpaceProps &
   FontFamilyProps &

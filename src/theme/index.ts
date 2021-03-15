@@ -1,14 +1,12 @@
-const COLORS = {
+export const COLORS = {
   transparent: 'transparent',
   white: '#FFFFFF',
   black: '#000000',
-  greyLight: '#F9F6F6',
   grey: '#C6C6C6',
   greyDark: '#494949',
-  green: '#00C39A',
+  green: '#00C56E',
   blue: '#05668D',
-  blueAzur: 'rgba(5, 102, 141, 0.1)',
-  blueGradient: 'linear-gradient(0deg, #05668D, #05668D), #00C39A',
+  red: '#E63B27',
 };
 
 const XS_BREAKPOINT = 400;
@@ -73,6 +71,11 @@ const BREAKPOINTS_PX: BreakpointsPX = Object.keys(BREAKPOINTS).reduce(
   },
 );
 
+/**
+ * Exposes the Game ThemeProvider with breakpoints, colors and media properties
+ *
+ * NB: the `media` property is not used yet
+ */
 export default function theme(): Theme {
   return {
     breakpoints: BREAKPOINTS_PX,

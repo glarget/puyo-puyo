@@ -5,6 +5,7 @@ import type {
   ColorProps,
   FlexboxProps,
   LayoutProps,
+  PositionProps,
   SpaceProps,
   TypographyProps,
 } from 'styled-system';
@@ -16,20 +17,22 @@ type Props = BorderProps &
   BoxShadowProps &
   ColorProps &
   FlexboxProps &
+  PositionProps &
   SpaceProps &
   LayoutProps &
   TypographyProps & {
-    children: string | ReactElement | ReactElement[];
+    children?: string | ReactElement | ReactElement[];
     as?: ElementType;
+    id?: string;
   };
 
 /**
  * Renders a generic Div with styled-system props
  */
-export default function Div({ children, as, ...rest }: Props): ReactElement {
+export default function Div({ children, id, as, ...rest }: Props): ReactElement {
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <DivWrapper as={as} {...rest}>
+    <DivWrapper id={id} as={as} {...rest}>
       {children}
     </DivWrapper>
   );

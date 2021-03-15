@@ -24,5 +24,6 @@ type CanvasProps = BoxShadowProps &
 
 // eslint-disable-next-line import/prefer-default-export
 export const CanvasWrapper = styled.canvas<CanvasProps>`
+  background: white;
   ${compose(border, boxShadow, flexbox, layout, position, space)};
 `;

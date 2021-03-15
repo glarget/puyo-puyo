@@ -1,5 +1,6 @@
 import React from 'react';
 import type {
+  BorderProps,
   ColorProps,
   FontFamilyProps,
   HeightProps,
@@ -11,7 +12,8 @@ import type { ElementType, ReactElement, ReactNode } from 'react';
 
 import { TextWrapper } from './Text.style';
 
-type Props = ColorProps &
+type Props = BorderProps &
+  ColorProps &
   HeightProps &
   LayoutProps &
   SpaceProps &
